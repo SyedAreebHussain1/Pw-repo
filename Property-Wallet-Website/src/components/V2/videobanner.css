@@ -1,0 +1,318 @@
+.app-store-btn-main-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    position: absolute !important;
+    right: 120px !important;
+    bottom: 200px !important;
+}
+
+.app-store-btn-main-container img {
+    width: 180px;
+    height: 65px;
+}
+
+
+.app-store-btn-main-mobile-container img {
+    width: 140px;
+    height: 50px;
+    /* top: 120%; */
+    border: 2px solid yellow;
+    margin-top: -20% !important;
+    margin-bottom: 20%;
+
+    /* z-index: 9999 !important; */
+}
+
+.banner-mobile-show {
+    display: none;
+}
+
+
+@media screen and (max-width:752px) and (min-width: 205px) {
+    .modile-size-hide {
+        display: none;
+    }
+
+    .banner-mobile-show {
+        display: block;
+    }
+}
+
+@media screen and (max-width:844px) and (min-width: 375px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 28px !important;
+        top: 230px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 50px;
+        height: 20px;
+    }
+}
+
+
+/* @media screen and (max-width:1678px) and (min-width: 900px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 8% !important;
+        top: 70% !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 190px;
+        height: 62px;
+    }
+}
+@media screen and (max-width:2100px) and (min-width: 1080px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 8% !important;
+        top: 65% !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 190px;
+        height: 62px;
+    }
+} */
+
+
+
+@media screen and (max-width:844px) and (min-width: 414px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 32px !important;
+        top: 250px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 60px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width:844px) and (min-width: 390px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 28px !important;
+        bottom: 700px !important;
+
+    }
+
+    .app-store-btn-main-container img {
+        width: 50px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:844px) and (min-width: 360px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 28px !important;
+        bottom: 490px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 50px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:844px) and (min-width: 412px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 28px !important;
+        top: 245px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 50px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:844px) and (min-width: 820px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 58px !important;
+        top: 395px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 110px;
+        height: 65px;
+    }
+}
+
+@media screen and (max-width:844px) and (min-width: 768px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 58px !important;
+        top: 395px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 110px;
+        height: 65px;
+    }
+}
+
+/* comment */
+
+@media screen and (max-width:1368px) and (min-width: 912px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 100px !important;
+        top: 450px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 150px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width:720px) and (min-width: 540px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 32px !important;
+        top: 290px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 80px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width:653px) and (min-width: 280px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 19px !important;
+        bottom: 440px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 40px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:914px) and (min-width: 412px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 35px !important;
+        bottom: 440px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 50px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:1280px) and (min-width: 800px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 100px !important;
+        top: 460px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 150px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width:1024px) and (min-width: 600px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 70px !important;
+        top: 410px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 140px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width:768px) and (min-width: 1024px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 50px !important;
+        top: 400px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 120px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width:1364px) and (min-width: 1278px) {
+    .app-store-btn-main-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        position: absolute !important;
+        right: 100px !important;
+        top: 450px !important;
+    }
+
+    .app-store-btn-main-container img {
+        width: 120px;
+        height: 50px;
+    }
+}
+
