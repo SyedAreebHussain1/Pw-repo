@@ -429,7 +429,7 @@ const NavbarV2Areeb = (props) => {
                         >
                           <Link
                             // to="/#"
-                            to="/property-wallet-crm"
+                            to="/crm"
                             // className="theme-btn-1-areeb-btn btn btn-effect-1-areeb-btn "
                           >
                             Property Wallet CRM
@@ -725,7 +725,7 @@ const NavbarV2Areeb = (props) => {
                   </ul> */}
               </li>
               <li>
-                <Link to="/property-wallet-crm">Property Wallet CRM</Link>
+                <Link to="/crm">Property Wallet CRM</Link>
               </li>
               <li>
                 <Link to="/#">Login / Signup</Link>

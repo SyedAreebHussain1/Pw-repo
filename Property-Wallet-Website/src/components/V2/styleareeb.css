@@ -2,36 +2,29 @@
   display: flex;
 }
 
-/* .features_v1_height {
-  height: 280px;
-} */
 
 .imgIphoneScreen {
   width: 40% !important;
 }
 
+.imgIphoneScreen1 {
+  width: 50% !important;
+}
+
 .imgDiv {
   width: 100%;
-  /* height: 1000px; */
-  /* text-align: start; */
   padding-left: 1.2rem;
 }
 
 .text-inven {
-  /* margin-top: ; */
   padding-top: 1.4rem !important;
   padding-left: 7px !important;
   font-size: 13px !important;
-  /* padding-bottom: 11px; */
 }
 
 .imgandp {
-  /* padding: 10px; */
-  /* align-self: center; */
-  /* text-align: center; */
   height: 4rem;
   align-items: center;
-  /* background-color: #1b5c68; */
 }
 
 .activeTest {
@@ -41,13 +34,31 @@
   color: rgb(89, 218, 218);
   box-shadow: 1px 1px 1px 1px rgb(219, 221, 223);
 }
+.activeTest01 {
+  transition: 0.5s;
+  background-color: rgb(92, 83, 83) !important;
+  border-radius: 8px;
+  color: rgb(89, 218, 218);
+  box-shadow: 1px 1px 1px 1px rgb(219, 221, 223);
+}
+.activeTest02 {
+  transition: 0.5s;
+  background-color: rgb(92, 83, 83) !important;
+  border-radius: 8px;
+  color: rgb(89, 218, 218);
+  box-shadow: 1px 1px 1px 1px rgb(219, 221, 223);
+}
 
 
 .anchorTag {
-  /* color: rgb(72, 196, 23) !important; */
   background-color: white !important;
   padding: 0% !important;
 }
+
+/* .anchorTag1 {
+  background-color: white !important;
+  padding: 0% !important;
+} */
 
 .btnLearnmore {
   background-color: #27a3a3 !important;
@@ -68,7 +79,6 @@
   border-radius: 0;
   background-color: #1b5c68;
   color: #fff !important;
-  /* border-radius: 0; */
 }
 
 .btnLearnmore:hover {
@@ -115,19 +125,16 @@
 
 .curve {
   width: 430px;
-  /* width: 100%; */
   height: 99px;
   border: solid 16px rgb(25, 116, 177);
   border-color: transparent transparent rgb(35, 146, 180) transparent;
   border-radius: 0 0 240px 50%/60px;
-  /* margin-right: -190px; */
   margin-left: -30px;
   margin-top: -70px;
 }
 
 .text_Quick {
   color: black;
-  /* font-size: 4.3rem; */
 }
 
 
@@ -162,7 +169,6 @@
   background-color: #27a3a3 !important;
   box-shadow: 2px 2px rgb(164, 183, 189);
   font-family: sans-serif;
-  /* font-size: 1rem; */
   font-weight: bold;
 }
 
@@ -189,7 +195,6 @@
   background-color: #27a3a3 !important;
   box-shadow: 2px 2px rgb(164, 183, 189);
   font-family: sans-serif;
-  /* font-size: 1rem; */
   font-weight: bold;
 }
 
@@ -213,9 +218,7 @@
 
 /* analytic end */
 /* more-serices */
-/* .more-serices_headingDiv { */
-/* text-align: center; */
-/* } */
+
 
 /* user testing */
 .border {
@@ -226,12 +229,15 @@
   margin-top: 15px;
 
 }
-.marginTop-7px{
+
+.marginTop-7px {
   margin-top: 7px;
 }
-.text-black{
+
+.text-black {
   color: black;
 }
+
 .marginTop12rem {
   margin-top: 12rem;
 }
@@ -314,83 +320,32 @@
 }
 
 
-/* .app-store-btn-main-container {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  position: absolute !important;
-  right: 100px !important;
-  bottom: 140px !important;
-}
-
-.app-store-btn-main-container img {
-  width: 180px;
-  height: 65px;
-} */
-
-
-/* @media screen and (max-width: 414px) and (min-width: 896px) {
-  .app-store-btn-main-container {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    position: absolute !important;
-    right: 150px !important;
-    bottom: 700px !important;
-  }
-
-  .app-store-btn-main-container img {
-    border: 2px oslid forestgreen;
-    width: 300px;
-    height: 125px;
-  }
-
-} */
 
 
 
-
-/* more-serices */
-/* @media screen and (max-width: 5000px) and (min-width: 752px) {
-  .faq-mobile-show {
-    display: none !important;
-  }
-} */
 
 @media screen and (max-width: 900px) and (min-width: 753px) {
-  /* .imgIphoneScreen {
-    display: none !important;
-  } */
+
   .services-aprt-none {
     display: none !important;
   }
-  .faq-mobile-show{
+
+  .faq-mobile-show {
     display: block !important;
   }
 }
 
 
 @media screen and (max-width: 752px) and (min-width: 230px) {
-  /* .app-store-btn-main-container {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    position: absolute !important;
-    right: 20px !important;
-    bottom: 410px !important;
-  }
-
-  .app-store-btn-main-container img {
-    width: 60px;
-    height: 25px;
-  } */
 
   .services-aprt-none {
     display: none !important;
   }
-  .faq-mobile-show{
+
+  .faq-mobile-show {
     display: block !important;
   }
+
   .imgDiv {
     justify-content: center !important;
     align-items: center !important;
@@ -408,18 +363,15 @@
   }
 
   .text_Quick {
-    /* color: black !important; */
     font-size: 1.6rem !important;
   }
 
   .curve {
     width: 300px !important;
-    /* width: 100%; */
     height: 109px !important;
     border: solid 16px #27a3a3 !important;
     border-color: transparent transparent #27a3a3 transparent !important;
     border-radius: 0 0 240px 50%/60px !important;
-    /* margin-right: -190px; */
     margin-left: -25px !important;
     margin-top: -99px !important;
   }

@@ -1,32 +1,36 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./global-components/navbar-v2";
-import PageHeader from "./global-components/page-header";
-import AboutV4 from "./section-components/about-v4";
-import Features from "./section-components/features-v1";
-import Team from "./section-components/team-v1";
-import Testimonial from "./section-components/testimonial-v1";
-import BlogSlider from "./blog-components/blog-slider-v1";
-import CallToActionV1 from "./section-components/call-to-action-v1";
-import Silder from "./V2/about-v2-a/about-slider";
+// import Navbar from "./global-components/navbar-v2";
+
+// import PageHeader from "./global-components/page-header";
+// import AboutV4 from "./section-components/about-v4";
+// import Features from "./section-components/features-v1";
+// import Team from "./section-components/team-v1";
+// import Testimonial from "./section-components/testimonial-v1";
+// import BlogSlider from "./blog-components/blog-slider-v1";
+// import CallToActionV1 from "./section-components/call-to-action-v1";
+// import Silder from "./V2/about-v2-a/about-slider";
+
 import Footer from "./global-components/footer";
 import { OurEthics } from "./section-components/our-ethics";
 // import DownloadApp from "./section-components/download-app";
 
 import PageHeaderV2 from "./V2/about-v2-a/page-headerV2";
-import About_V2_aree from "./V2/about-v2-a/about-v2-aree";
+import About_V2_View from "./V2/about-v2-a/About_V2_View";
 import DetailsContent from "./V2/about-v2-a/details-content";
+// import NavbarNewTwo from "./global-components/NavbarNewTwo";
+import NavbarSand from "./global-components/NavbarSand";
+import ThreeBox from "./V2/Home/helpers/ThreeBox";
 // import YoutubeSrc from "./V2/youtube-src-video";
 
 const About_v1 = (props) => {
   // console.log('areeb props about', props)
   const [title, setTitle] = useState("About | Property Wallet");
 
-
   useEffect(() => {
     if (props.location.pathname == "/about") {
-      setTitle("About | Property Wallet")
+      setTitle("About | Property Wallet");
     } else {
-      setTitle("About | Property Wallet")
+      setTitle("About | Property Wallet");
     }
     // console.log(props.location.pathname)
   }, []);
@@ -34,15 +38,27 @@ const About_v1 = (props) => {
   useEffect(() => {
     document.title = title;
   }, [title]);
-
-
+  const contentArry = [
+    {
+      title: "Mission ",
+      content:
+        "At Property Wallet, our mission is to empower real estate professionals across Pakistan with cutting-edge technology and unparalleled convenience. We strive to revolutionize the real estate industry by providing a comprehensive platform that enhances the way agents manage, market, and grow their businesses.",
+    },
+    {
+      title: "Vision ",
+      content:
+        "Our vision at Property Wallet is to reshape the landscape of real estate in Pakistan. We envision a future where every realtor can harness the power of our innovative mobile app to streamline their operations, expand their networks, and increase their overall success.",
+    },
+  ];
   return (
     <div>
       {/* <YoutubeSrc /> */}
-      <Navbar />
+      {/* <Navbar /> */}
+      {/* <NavbarNewTwo /> */}
+      <NavbarSand />
       <PageHeaderV2
         headertitle="About Us"
-        content=" Our mission is to provide complete convenience to all estate dealers through a safe, fast and reliable service that you can access anywhere, anytime,"
+        content="Our mission is to provide complete convenience to all estate dealers through a safe, fast and reliable service that you can access anywhere, anytime,"
       />
       {/* zaman */}
       {/* <PageHeader
@@ -51,8 +67,12 @@ const About_v1 = (props) => {
       /> */}
       {/* <AboutV4 /> */}
       {/* zaman */}
-      <About_V2_aree />
-      <DetailsContent content='Close more deals with more convenience with the Property Wallet app, powered by Square Foot Exchange, where we help realtors manage and market their brands. Property Wallet is Pakistan’s 1st Real Estate mobile app that enables realtors to streamline their business processes. It is a free, easy-to-use and a 24/7 service that assists users with managing their staff, inventory, sales and much more on-the-go, with added effectiveness and efficiency. Property Wallet offers you a platform where you can manage and grow your business online and create and maintain healthy business relationships, all while protecting the confidentiality of your business data and information. We also aim to simplify all complexities for agents by managing and calculating their commissions for the properties they successfully sell. Property Wallet is 360 degree business management in your pocket.' />
+      <About_V2_View />
+      <DetailsContent content="Property Wallet is not just a mobile app it's your trusted ally in the world of real estate. With a dedicated focus on providing top-notch solutions to realtors, we've created a platform that is designed to be your all-in-one business management & selling. We understand the unique challenges and opportunities in the Pakistani real estate market, and our mission is to equip you with the resources you need to thrive. Whether you're a seasoned professional or just starting your journey in real estate, Property Wallet is here to support you every step of the way. Join us in shaping the future of the real estate industry and experience the difference with Property Wallet – where convenience, efficiency, and success converge." />
+      <ThreeBox
+        contentArry={contentArry}
+        customClass="margin-top-fix-1 ltn__feature-area section-bg-1--- pt-115 pb-90 mb-120---"
+      />
       <OurEthics />
       {/* <Features customClass="ltn__feature-area section-bg-1 pt-120 pb-90 mb-120---" /> */}
       {/* <Team /> */}

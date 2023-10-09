@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import parse from "html-react-parser";
 
 class ContactInfo extends Component {
   render() {
@@ -43,7 +41,8 @@ class ContactInfo extends Component {
                 </div>
                 <h3>Phone Number</h3>
                 <p>
-                03333739291{" "}
+                0331-111-0379{" "}
+                <br/>
                   <span
                     style={{
                       color: "transparent",
@@ -66,6 +65,8 @@ class ContactInfo extends Component {
                 </div>
                 <h3>Office Address</h3>
                 <p>B-6(C), Miran Mohammad Shah Road, M.A.C.H.S, Karachi</p>
+                {/* <br/> */}
+
               </div>
             </div>
           </div>

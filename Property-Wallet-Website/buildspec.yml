@@ -3,7 +3,7 @@ phases:
   install:
     commands:
       - echo runtime installed
-      - n 14.17.3
+      - n 14
   pre_build:
     commands:
       

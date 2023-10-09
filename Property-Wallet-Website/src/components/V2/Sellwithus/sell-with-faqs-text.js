@@ -10,9 +10,6 @@ const FaqsOrText = (props) => {
     let publicUrl = process.env.PUBLIC_URL + "/";
 
     let CustomClass = props.customClass ? props.customClass : "";
-    const usersTestingFeedback = "Take your real estate agency to greater heights!";
-    const fastImpossiblysimple = "Avail our services to manage your property business at your convenience.";
-
     const headingLarge = 'Got Questions?'
     const pera = 'Learn everything about Property Wallet and the most frequently asked questions. '
 
@@ -181,11 +178,11 @@ const FaqsOrText = (props) => {
                                     style={{ color: "#053857", fontSize: "3rem" }}
                                 // to="/service-details"
                                 >
-                                    {headingLarge}
+                                    {props.heading}
                                     {/* <div className="curve"></div> */}
                                 </h1>
                                 <p className="" style={{ fontSize: "1rem", marginTop: '', color: "black" }}>
-                                    {pera}
+                                    {props.content}
                                 </p>
                                 <div className="">
                                     <h6 style={{ color: "#053857" }}> Drop us email at:</h6>  info@propertywallet.pk

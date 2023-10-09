@@ -6,6 +6,8 @@ import ContactForm from "./section-components/contact-form";
 import Map from "./section-components/map";
 import CallToActionV1 from "./section-components/call-to-action-v1";
 import Footer from "./global-components/footer";
+import NavbarNewTwo from "./global-components/NavbarNewTwo";
+import NavbarSand from "./global-components/NavbarSand";
 // import YoutubeSrc from "./V2/youtube-src-video";
 
 
@@ -18,7 +20,6 @@ const ContactV1 = (props) => {
     } else {
       setTitle("Contact | Property Wallet")
     }
-    // console.log(props.location.pathname)
   }, []);
 
   useEffect(() => {
@@ -28,7 +29,10 @@ const ContactV1 = (props) => {
   return (
     <div>
       {/* <YoutubeSrc /> */}
-      <Navbar />
+      {/* <Navbar /> */}
+      <NavbarSand />
+
+      {/* <NavbarNewTwo /> */}
       <PageHeader headertitle="Contact Us" subheader="Contact" />
       <ContactForm />
       <ContactInfo />

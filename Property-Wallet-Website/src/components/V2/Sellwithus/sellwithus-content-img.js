@@ -24,12 +24,8 @@ class ContentImg extends Component {
                             <div className="about-us-info-wrap">
                                 <div className="section-title-area ltn__section-title-2--- mb-20">
                                     <h1 className="section-title" style={{ color: "#053857" }}>What includes in Property Wallet CRM<span></span></h1>
-                                    <div
-                                        style={{
-                                            // marginLeft:"140px"
-                                            border: ""
-                                        }}>
-                                        {/* <h6 style={{ color: "#053857",fontSize:"2rem" }}>What includes in Property Wallet CRM </h6> */}
+                                    <div>
+                                      
                                         <ul className="">
                                             <li>Inventory Management</li>
                                             <li>Property documentation</li>

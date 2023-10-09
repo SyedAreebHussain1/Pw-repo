@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react"
 import NavbarV2 from '../../../global-components/navbar-v2'
 import Footer from "../../../global-components/footer";
-import StaffHead from "./staff-manegement-head";
 import StaffTestimonial from "./staff-manegement-testimonial";
 import StaffServices from "./staff-manegement-services";
+import PageHead from "../ServicesComponents/PageHead";
+import staffVideo from '../../../images/StaffVideo.m4v'
+import NavbarNewTwo from "../../../global-components/NavbarNewTwo";
+import NavbarSand from "../../../global-components/NavbarSand";
 
 const StaffManagement = (props) => {
 
@@ -15,7 +18,6 @@ const StaffManagement = (props) => {
         } else {
             setTitle("Staff Management | Property Wallet")
         }
-        // console.log(props.location.pathname)
     }, []);
 
     useEffect(() => {
@@ -23,8 +25,11 @@ const StaffManagement = (props) => {
     }, [title]);
     return (
         <>
-            <NavbarV2 />
-            <StaffHead />
+            {/* <NavbarV2 /> */}
+            {/* <NavbarNewTwo /> */}
+            <NavbarSand />
+            {/* <StaffHead /> */}
+            <PageHead title={`Staff Management`} content={'Streamline Your Workforce with Staff Management'} video={staffVideo} />
             <StaffServices />
             {/* <StaffTestimonial /> */}
             <Footer />

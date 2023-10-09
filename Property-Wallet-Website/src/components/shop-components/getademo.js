@@ -9,6 +9,8 @@ import Footer from "../global-components/footer";
 import MoreServices from "./more-services";
 import MoreVideos from "./more-videos";
 import MoreVideoV2 from "./more-videosV2";
+import NavbarNewTwo from "../global-components/NavbarNewTwo";
+import NavbarSand from "../global-components/NavbarSand";
 
 const GetAdemo = (props) => {
   const [title, setTitle] = useState("How To Use | Property Wallet");
@@ -26,7 +28,10 @@ const GetAdemo = (props) => {
   }, [title]);
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      {/* <NavbarNewTwo /> */}
+      <NavbarSand />
+
       <PageHeader
         headertitle="How to Use"
         subheader="How to Use"

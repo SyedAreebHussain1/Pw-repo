@@ -75,7 +75,7 @@ export default function Carroussel(props) {
           right: 0,
         }}
       >
-        <img src={imgV2} style={{ width: "auto", height: "32rem" }} />
+        <img src={img} style={{ width: "auto", height: "32rem" }} />
       </div>
       <div
         className="icon_left"

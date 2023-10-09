@@ -107,18 +107,6 @@
 
 
 
-/* Custom curved */
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    overflow: hidden;
-    width: 100vw;
-    height: 100vw;
-} */
 
 
 .curved-custom-main-Div {
@@ -152,22 +140,6 @@ body{
     color: #27a3a3;
 }
 
-.upper-svg {
-    /* background:#26de81 ; */
-}
-
-/* Custom curved end */
-
-/* card */
-/* * {
-    box-sizing: border-box;
-  } */
-
-/* body {
-    font-family: Arial, Helvetica, sans-serif;
-  } */
-
-/* Float four columns side by side */
 .column-card {
     float: left;
     width: 33%;
@@ -227,31 +199,6 @@ body{
     /* border: 2px solid yellow; */
 }
 
-/* SixBoxes */
-
-/* btn */
-/* .theme-btn-1-areeb {
-  
-    background-color: red;
-    color: var(--white);
-    border-radius: 4px;
-    border: none;
-  }
-  .theme-btn-1-areeb:hover {
-  
-    background-color: red;
-
-    
-    color: var(--white);
-    border: none;
-    
-  }
-  .theme-btn-1-areeb{
-    padding: 10px 100px 9px;
-  }
-  .theme-btn-1-areeb {
-    display: block;
-  } */
 
 
 
@@ -480,17 +427,9 @@ body{
 /*  */
 
 .backGround-img {
-    /* background-image: url("../../images/Screenshot11.png") !important; */
-    /* background-color: #cccccc  !important; */
-    /* background-color: #053857 !important; */
     width: 100%;
     height: 100vh !important;
-    /* background-position: center; */
-    /* width: 100%; */
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    /* background-size: cover; */
-    /* z-index: 999; */
+   
 }
 
 
@@ -512,8 +451,7 @@ body{
 
     .six-box-block {
         display: block !important;
-        /* justify-con tent: space-between; */
-        /* border: 2px solid yellow; */
+     
     }
 
     /* faq */

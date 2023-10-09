@@ -1,96 +1,135 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import parse from 'html-react-parser';
+import React, { useEffect, useState } from "react";
+import swal from "sweetalert";
+// import 
+import { useDispatch } from "react-redux";
 
-class Login extends Component {
+import { loginAction } from "../../store/action/authAction";
+import NavbarSand from "../global-components/NavbarSand";
 
-    render() {
+const Login = ({ history }) => {
+  const dispatch = useDispatch();
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-    return	<div>
-			 <div className="ltn__login-area pb-65">
-				<div className="container">
-				<div className="row">
-					<div className="col-lg-12">
-					<div className="section-title-area text-center">
-						<h1 className="section-title">Sign In <br />To  Your Account</h1>
-						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br />
-						Sit aliquid,  Non distinctio vel iste.</p>
-					</div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-lg-6">
-					<div className="account-login-inner">
-						<form  method="GET" className="ltn__form-box contact-form-box">
-						<input type="text" name="email" placeholder="Email*" />
-						<input type="password" name="password" placeholder="Password*" />
-						<div className="btn-wrapper mt-0">
-							<button className="theme-btn-1 btn btn-block" type="submit">SIGN IN</button>
-						</div>
-						<div className="go-to-btn mt-20">
-						<a href="#" title="Forgot Password?" data-bs-toggle="modal" data-bs-target="#ltn_forget_password_modal"><small>FORGOTTEN YOUR PASSWORD?</small></a>
-						</div>
-						</form>
-					</div>
-					</div>
-					<div className="col-lg-6">
-					<div className="account-create text-center pt-50">
-						<h4>DON'T HAVE AN ACCOUNT?</h4>
-						<p>Add items to your wishlistget personalised recommendations <br />
-						check out more quickly track your orders register</p>
-						<div className="btn-wrapper go-top">
-							<Link to="/register" className="theme-btn-1 btn black-btn">CREATE ACCOUNT</Link>
-						</div>
-					</div>
-					</div>
-				</div>
-				</div>
-						</div>
-			<div className="ltn__modal-area ltn__add-to-cart-modal-area----">
-			<div className="modal fade" id="ltn_forget_password_modal" tabIndex={-1}>
-				<div className="modal-dialog modal-md" role="document">
-				<div className="modal-content">
-					<div className="modal-header">
-					<button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-					</div>
-					<div className="modal-body">
-					<div className="ltn__quick-view-modal-inner">
-						<div className="modal-product-item">
-						<div className="row">
-							<div className="col-12">
-							<div className="modal-product-info text-center">
-								<h4>FORGET PASSWORD?</h4>
-								<p className="added-cart"> Enter you register email.</p>
-								<form action="#" className="ltn__form-box">
-								<input type="text" name="email" placeholder="Type your register email*" />
-								<div className="btn-wrapper mt-0">
-									<button className="theme-btn-1 btn btn-full-width-2" type="submit">Submit</button>
-								</div>
-								</form>
-							</div>
-							{/* additional-info */}
-							<div className="additional-info d-none">
-								<p>We want to give you <b>10% discount</b> for your first order, <br />  Use discount code at checkout</p>
-								<div className="payment-method">
-								<img src={publicUrl+"assets/img/icons/payment.png"} alt="#" />
-								</div>
-							</div>
-							</div>
-						</div>
-						</div>
-					</div>
-					</div>
-				</div>
-				</div>
-			</div>
-			</div>
+  const onSuccuess = (success) => {
+    swal({
+      title: "Congratulations!",
+      text: success?.message,
+      icon: "success",
+    }).then((isOk) => {
+      history.replace("/dashboard/order");
+    });
+    setLoading(false);
+  };
 
-			</div>
-        }
-}
+  const onFailure = (fail) => {
+    swal("Sorry!", `${fail?.message}`, "error");
+    setLoading(false);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email && password) {
+      setLoading(true);
+      dispatch(loginAction({ email, password }, onSuccuess, onFailure));
+    } else {
+      swal("Sorry!", `Email and Password are required`, "error");
+    }
+  };
+  useEffect(() => {
+    let user = localStorage.getItem("user");
+    if (user) {
+      history.push("/dashboard/order");
+    }
+  }, [localStorage]);
+  return (
+    <>
+      <NavbarSand />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="section-title-area text-center">
+                <h1 style={{ fontSize: "28px" }} className="section-title">
+                  Effortlessly Manage Your Properties with
+                  <br />
+                  Our Real Estate Management System Portal.
+                </h1>
+              </div>
+            </div>
+          </div>
 
-export default Login
+          <div
+            style={{ marginLeft: "20%", marginRight: "20%" }}
+            className="row"
+          >
+            <div className="col-lg-12">
+              <div className="account-login-inner">
+                <form
+                  method="GET"
+                  className="ltn__form-box contact-form-box"
+                  onSubmit={handleSubmit}
+                >
+                  <label
+                    style={{
+                      marginBottom: "5px",
+                      fontWeight: "600",
+                      color: "grey",
+                    }}
+                  >
+                    Email Address
+                  </label>
+                  <input
+                    style={{ borderRadius: "8px" }}
+                    type="text"
+                    name="email"
+                    placeholder="Email*"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <label
+                    style={{
+                      marginBottom: "5px",
+                      fontWeight: "600",
+                      color: "grey",
+                    }}
+                  >
+                    Password
+                  </label>
+                  <input
+                    style={{ borderRadius: "8px" }}
+                    type="password"
+                    name="password"
+                    placeholder="Password*"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <div className="btn-wrapper mt-0">
+                    <button
+                      style={{ width: "100%", borderRadius: "8px" }}
+                      className="custom--login-btn-1 btn"
+                      type="submit"
+                      disabled={loading}
+                    >
+                      {loading ? "LOADING..." : "SIGN IN"}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Login;

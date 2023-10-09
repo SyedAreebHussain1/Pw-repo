@@ -17,7 +17,7 @@ const DetailsContent = (props) => {
             data-aos-anchor-placement="center-bottom"
             style={{}}>
             <div className="details-content-padding text-gray-ad" style={{ fontSize: "1.1rem" }}>{content}</div>
-            <div className="none" style={{ background: "#27a3a3", width: '100%', height: "300px" }}></div>
+            <div className="none" style={{ background: "#27a3a3", width: '100%', height: "225px" }}></div>
         </div>
     )
 }

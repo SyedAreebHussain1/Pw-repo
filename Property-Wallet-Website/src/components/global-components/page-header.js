@@ -32,7 +32,7 @@ const Page_header = (props) => {
             CustomClass
           }
 
-          data-bs-bg={publicUrl + "assets/img/bg/14.jpg"}
+          // data-bs-bg={publicUrl + "assets/img/bg/14.jpg"}
         >
           <div className="margin-top-fix container">
             <div style={{ marginLeft: "2%", marginRight: "2%" }} className="row">

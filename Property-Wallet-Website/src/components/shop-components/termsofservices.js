@@ -4,6 +4,8 @@ import Banner from "../section-components/banner-v2";
 
 import Footer from "../global-components/footer";
 import PageHeader from "../global-components/page-header";
+import NavbarNewTwo from "../global-components/NavbarNewTwo";
+import NavbarSand from "../global-components/NavbarSand";
 
 const TOS = (props) => {
 
@@ -13,10 +15,9 @@ const TOS = (props) => {
   useEffect(() => {
     if (props.location.pathname == "/terms") {
       setTitle("Terms of services | Property Wallet")
-    }else{
+    } else {
       setTitle("Terms of services | Property Wallet")
     }
-    // console.log(props.location.pathname)
   }, []);
 
   useEffect(() => {
@@ -327,7 +328,10 @@ const TOS = (props) => {
   );
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      {/* <NavbarNewTwo /> */}
+      <NavbarSand />
+
       <PageHeader headertitle="Terms of services" content="" />
       {content}
       <Footer />

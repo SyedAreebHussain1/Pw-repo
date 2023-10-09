@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import parse from "html-react-parser";
-import qrImg from "../images/qrcode.png";
-import appleImg from "../images/apple.png";
-import googleImg from "../images/google.png";
-import mobileleft from "../images/mobilesidebar.png";
+// import { Link } from "react-router-dom";
+// import parse from "html-react-parser";
+// import qrImg from "../images/qrcode.png";
+// import appleImg from "../images/apple.png";
+// import googleImg from "../images/google.png";
+// import mobileleft from "../images/mobilesidebar.png";
 export const OurEthics = () => {
   return (
-    <div className="margin-top-fix-1"  data-aos="fade-up">
+    <div className=" topspace bottomspace"  data-aos="fade-up">
       <h1
         style={{ textAlign: "center", color: "#27A3A3" }}
         className="page-title"

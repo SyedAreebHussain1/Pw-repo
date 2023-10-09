@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react"
 import NavbarV2 from '../../../global-components/navbar-v2'
 import Footer from "../../../global-components/footer";
-import ReportPageHead from "./report-page-head";
 import ReportServices from "./report-services";
 import ReportTestimonial from "./report-testimonial";
+import PageHead from "../ServicesComponents/PageHead";
+import reportVideo from '../../../images/ReportVideo.m4v'
+import NavbarNewTwo from "../../../global-components/NavbarNewTwo";
+import NavbarSand from "../../../global-components/NavbarSand";
 
 const ReportManagement = (props) => {
 
@@ -22,8 +25,11 @@ const ReportManagement = (props) => {
     }, [title]);
     return (
         <>
-            <NavbarV2 />
-            <ReportPageHead />
+            {/* <NavbarV2 /> */}
+            <NavbarSand />
+            {/* <NavbarNewTwo /> */}
+            {/* <ReportPageHead /> */}
+            <PageHead title={"Report Management"} content={'Streamline Your Report Management with Property Wallet'} video={reportVideo} />
             <ReportServices />
             {/* <ReportTestimonial /> */}
             <Footer />

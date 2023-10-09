@@ -10,7 +10,6 @@ const CurveCustom = () => {
             </div>
             <div className="mainDiv">
                 <h1>Start your journy</h1>
-                {/* <p>I am Areeb Hussain</p> */}
                 <div
                                         style={{
                                             // display: "flex",

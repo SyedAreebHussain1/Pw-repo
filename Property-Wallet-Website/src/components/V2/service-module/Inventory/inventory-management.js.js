@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react"
-import NavbarV2 from '../../../global-components/navbar-v2'
-import '../service_module.css'
+// import NavbarV2 from '../../../global-components/navbar-v2'
 import InventoryServices from "./inventory-service"
-import InventoryPageHead from "./inventory-page-head"
-import InventoryTestimonial from './inventory-testimonial'
+// import InventoryTestimonial from './inventory-testimonial'
+import inventryVideo from '../../../images/InventoryVideo.m4v'
+
 import Footer from "../../../global-components/footer";
+import PageHead from "../ServicesComponents/PageHead"
+// import NavbarNewTwo from "../../../global-components/NavbarNewTwo"
+import NavbarSand from "../../../global-components/NavbarSand"
+import '../service_module.css'
 
 const InventoryManagement = (props) => {
     const [title, setTitle] = useState("Inventory Management | Property Wallet");
-
-    let publicUrl = process.env.PUBLIC_URL + "/";
-
-    let CustomClass = props.customClass ? props.customClass : "";
-
     var testClassvar = document.getElementsByClassName("testClass");
     useEffect(() => {
         for (var i = 0; i < testClassvar.length; i++) {
@@ -40,8 +39,10 @@ const InventoryManagement = (props) => {
 
     return (
         <>
-            <NavbarV2 />
-            <InventoryPageHead />
+            {/* <NavbarV2 /> */}
+            <NavbarSand />
+            {/* <NavbarNewTwo /> */}
+            <PageHead title={" Inventory Management"} content={'Streamline Your Business with Inventory Management'} video={inventryVideo} />
             <InventoryServices />
             {/* <InventoryTestimonial /> */}
             <Footer />

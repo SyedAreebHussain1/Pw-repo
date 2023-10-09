@@ -1,72 +1,27 @@
 import React, { Component, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import parse from "html-react-parser";
-import cities from "../../utils/cities.json";
-
-import '../V2/styleareeb.css'
 import { useDispatch, useSelector } from "react-redux";
-
-// import {postContact} from "../../components/section-components/contact-form.js"
-
+import AlertMessage from "../V2/AlertMessage";
 import { postContact } from "../../store/action/contactUsAction";
-import swal from "sweetalert";
-
+import '../V2/styleareeb.css'
 
 const ContactForm = (props) => {
-  // componentDidMount() {
-  //   const $ = window.$;
-
-  //   // Get the form.
-  //   var form = $("#contact-form");
-
-  //   // Get the messages div.
-  //   var formMessages = $(".form-messege");
-
-  //   // Set up an event listener for the contact form.
-  //   $(form).submit(function (e) {
-  //     // Stop the browser from submitting the form.
-  //     e.preventDefault();
-
-  //     // Serialize the form data.
-  //     var formData = $(form).serialize();
-
-  //     // Submit the form using AJAX.
-  //     $.ajax({
-  //       type: "POST",
-  //       url: $(form).attr("action"),
-  //       data: formData,
-  //     })
-  //       .done(function (response) {
-  //         // Make sure that the formMessages div has the 'success' class.
-  //         $(formMessages).removeClass("error");
-  //         $(formMessages).addClass("success");
-
-  //         // Set the message text.
-  //         $(formMessages).text(response);
-
-  //         // Clear the form.
-  //         $("#contact-form input,#contact-form textarea").val("");
-  //       })
-  //       .fail(function (data) {
-  //         // Make sure that the formMessages div has the 'error' class.
-  //         $(formMessages).removeClass("success");
-  //         $(formMessages).addClass("error");
-
-  //         // Set the message text.
-  //         if (data.responseText !== "") {
-  //           $(formMessages).text(data.responseText);
-  //         } else {
-  //           $(formMessages).text(
-  //             "Oops! An error occured and your message could not be sent."
-  //           );
-  //         }
-  //       });
-  //   });
-  // }
-
-  // render() {
   let publicUrl = process.env.PUBLIC_URL + "/";
-  // console.log("TTILE", this.props?.title);
+  var validation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const numValidation = /^\d{11}$/;
+  const dispatch = useDispatch();
+  const [isLoading, setisLoading] = useState(false)
+  const [show, setShow] = useState(false);
+
+  const [message, setMessage] = useState({
+    error: {
+      colorAlert: "",
+      msg: "",
+    },
+    success: {
+      colorAlert: "",
+      msg: "",
+    },
+  });
   const [body, setBody] = useState({
     name: '',
     phoneNo: '',
@@ -74,32 +29,81 @@ const ContactForm = (props) => {
     subject: '',
     message: ''
   })
-  // console.log(state)
-  const dispatch = useDispatch();
   const state = useSelector((state) => state.contact_us);
-  console.log(state)
-  const onSuccuess = (success) => {
-    swal("Submit", success, "success")
-    setBody({
-      name: '',
-      phoneNo: '',
-      email: '',
-      subject: '',
-      message: ''
-    })
-  }
-  const onFailur = (fail) => {
-    swal("Sorry!", fail, "error")
-  }
-  const userDataSubmit = (e) => {
-    e.preventDefault()
-    if (body.name !== "" && body.phoneNo !== "" && body.email !== "" && body.subject !== "" && body.message !== "") {
-      dispatch(postContact(body, onSuccuess, onFailur));
 
-    } else {
-      swal("Sorry!", "All fields are required", "error");
+  const onSuccuess = (success) => {
+    if (success?.message) {
+      setShow(true);
+      setMessage({
+        success: {
+          colorAlert: "success",
+          msg: `Your form has been submitted successfully. Thank you!`,
+        },
+      });
+      setBody({
+        name: "",
+        phoneNo: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      setisLoading(false);
     }
-  }
+  };
+
+  const onFailur = (fail) => {
+    if (fail) {
+      setMessage({
+        error: {
+          msg: `Sorry!, ${fail?.message}, error`,
+          colorAlert: "danger",
+        },
+      });
+      setShow(true);
+      setisLoading(false);
+    }
+    setisLoading(false);
+  };
+  const userDataSubmit = (e) => {
+    // console.log(body)
+    e.preventDefault();
+    if (
+      body.name !== "" &&
+      body.phoneNo !== "" &&
+      body.email !== "" &&
+      body.subject !== "" &&
+      body.message !== ""
+    ) {
+      if (validation.test(body.email) && numValidation.test(body.phoneNo)) {
+        dispatch(postContact(body, onSuccuess, onFailur));
+        setisLoading(true);
+      } else {
+        setShow(true);
+        setMessage({
+          error: {
+            msg: !validation.test(body.email)
+              ? "You have entered an invalid email address!"
+              : ""
+              ? numValidation.test(body.phoneNo)
+              : "Please Enter valid Phone Number",
+            colorAlert: "danger",
+          },
+        });
+      }
+    } else {
+      // swal("Sorry!", "All fields are required", "error");
+      // setMessage({ error: 'Sorry!, All fields are required, error' })
+      setisLoading(false);
+      setShow(true);
+
+      setMessage({
+        error: {
+          msg: "Sorry!, All fields are required. Please fill in all the required fields before submitting the form, error",
+          colorAlert: "danger",
+        },
+      });
+    }
+  };
 
   return (
     <div
@@ -108,7 +112,8 @@ const ContactForm = (props) => {
           ? { marginBottom: "2%" }
           : { marginTop: "-2%" }
       }
-      className="ltn__contact-message-area " data-aos="fade-up"
+      className="ltn__contact-message-area "
+      data-aos="fade-up"
     >
       <div className="margin-top-fix-1 container">
         <div className="row">
@@ -135,58 +140,48 @@ const ContactForm = (props) => {
                         // onChange={(event) => setBody({ ...body, name: event.target.value })}
                         onChange={(e) => {
                           let val = e.target.value;
-                          val = val.replace(/[^A-Za-z ]/gi, "")
+                          val = val.replace(/[^A-Z a-z ]/gi, "");
                           setBody({ ...body, name: val });
                         }}
                         autoComplete="off"
+                        required
                       />
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="input-item input-item-email ltn__custom-icon">
                       <input
-                        value={body?.email}
+                        value={body.email}
                         type="email"
                         name="email"
-                        // onChange={(event) => { let valEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-                        //   valEmail.setBody({ ...body, email: event.target.value })}}
 
-                        onChange={(event) => setBody({ ...body, email: event.target.value })}
+                        onChange={(event) => {
+                     
+                          setBody({ ...body, email: event.target.value });
+                        }}
                         placeholder="Enter email address"
                         autoComplete="off"
+                        required
                       />
                     </div>
                   </div>
-                  {/* {this.props?.title?.trim().length > 0 ? null : (
-                      <div className="col-md-6">
-                        <div className="input-item">
-                          <select className="nice-select" name="service">
-                            <option>Select City</option>
-                            {cities.cities.map((city) => (
-                              <option key={city} value={city}>
-                                {city}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                    )} */}
                   <div className="col-md-6">
                     <div className="input-item input-item-phone ltn__custom-icon">
                       <input
                         value={body?.phoneNo}
                         type="text"
                         name="phoneNo"
-                        maxLength="11"
+                        maxLength="15"
                         // onChange={(event) => setBody({ ...body, phoneNo: event.target.value })}
                         onChange={(e) => {
                           // var xxx = xxx.replace(/[^0-9,.]+/g, "")
                           let valNum = e.target.value;
-                          valNum = valNum.replace(/[^0-9,.]+/g, "")
+                          valNum = valNum.replace(/[^0-9,+]+/g, "");
                           setBody({ ...body, phoneNo: valNum });
                         }}
                         placeholder="Phone"
                         autoComplete="off"
+                        required
                       />
                     </div>
                   </div>
@@ -196,48 +191,49 @@ const ContactForm = (props) => {
                         value={body?.subject}
                         type="text"
                         name="subject"
-                        onChange={(event) => setBody({ ...body, subject: event.target.value })}
+                        onChange={(event) =>
+                          setBody({ ...body, subject: event.target.value })
+                        }
                         placeholder="Subject"
                         autoComplete="off"
+                        required
                       />
                     </div>
                   </div>
                   <div className="col-md-12">
-                    <div className="input-item input-item-message ltn__custom-icon">
+                    <div className="input-item input-item-textarea ltn__custom-icon">
                       <textarea
                         value={body?.message}
                         type="text"
                         name="message"
-                        onChange={(event) => setBody({ ...body, message: event.target.value })}
+                        onChange={(event) =>
+                          setBody({ ...body, message: event.target.value })
+                        }
                         placeholder="Message"
                         autoComplete="off"
+                        required
                       />
                     </div>
                   </div>
                 </div>
-                {/* <div className="input-item input-item-textarea ltn__custom-icon">
-                    <textarea
-                      name="message"
-                      placeholder="Enter message"
-                      defaultValue={""}
-                    />
-                  </div>
-                  <p>
-                    <label className="input-info-save mb-0">
-                      <input type="checkbox" name="agree" /> Save my name,
-                      email, and website in this browser for the next time I
-                      comment.
-                    </label>
-                  </p> */}
+                <AlertMessage message={message} show={show} />
+
                 <div className="btn-wrapper mt-0">
-                  <button
-                    className="btn theme-btn-1 btn-effect-1 text-uppercase btnLearnmore"
-                    type="submit"
-                    onClick={userDataSubmit}
-                    disabled={body.name !== "" && body.phoneNo !== "" && body.email !== "" && body.subject !== "" && body.message !== "" ? false : true}
-                  >
-                    Submit
-                  </button>
+                  {isLoading ? (
+                    <button
+                      className="btn theme-btn-1 btn-effect-1 text-uppercase btnLearnmore"
+                      disabled
+                    >
+                      Loading...
+                    </button>
+                  ) : (
+                    <button
+                      className="btn theme-btn-1 btn-effect-1 text-uppercase btnLearnmore"
+                      type="submit"
+                      onClick={userDataSubmit}  >
+                      Submit
+                    </button>
+                  )}
                 </div>
                 <p className="form-messege mb-0 mt-20" />
               </form>
@@ -247,7 +243,6 @@ const ContactForm = (props) => {
       </div>
     </div>
   );
-}
-
+};
 
 export default ContactForm;

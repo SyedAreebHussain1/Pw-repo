@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from "react"
-import './sellwithus.css'
-import downloadImg from '../../images/downloadscreenshot.png'
+// import downloadImg from '../../images/downloadscreenshot.png'
 import { Link, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import BannerService from "../../images/crm-header.m4v"
-// import ReactPlayer from 'react-player'
+// import BannerService from "../../images/crm-header.m4v"
+// import CrmMainVideo from "../../images/CrmMainVideo.mp4"
+// import CrmMainVideo from "../../images/CrmMainVideo.mp4"
+import CrmMainVideo from "../../images/CrmMainVideo2.mp4"
+
+import './sellwithus.css'
+
 
 
 const SellWithUsHead = (props) => {
-  // const [fu] = useState()
-
   let publicUrl = process.env.PUBLIC_URL + "/";
-
   let CustomClass = props.customClass ? props.customClass : "";
-  const usersTestingFeedback = "Take your real estate agency to greater heights!";
-  const fastImpossiblysimple = "Avail our services to manage your property business at your convenience.";
-
-  const headingLarge = 'Ready to put your property on the market? Let us help you make it a reality!'
-  const pera = 'Property wallet CRM is here to make your transition as smooth and stress-free as possible. We want you to get the best return on your investment while avoiding costly surprises down the line. '
-
   const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   var ua = navigator.userAgent.toLowerCase();
   var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
@@ -110,19 +105,12 @@ const SellWithUsHead = (props) => {
 
 
       <div
-      //  data-aos="flip-right" 
-       data-aos="fade-up" className={" bg-white " + CustomClass} style={{ border: '', marginLeft: "0%", marginRight: '0%', marginTop: "" }}>
-        <div className="row ltn__custom-gutter--- justify-content-center go-top bg-white" style={{ border: '', marginLeft: "0%", marginRight: '0%' }}
-
+        data-aos="fade-up" className={" bg-white " + CustomClass} style={{ marginLeft: "0%", marginRight: '0%'}}>
+        <div className="row ltn__custom-gutter--- justify-content-center go-top bg-white" style={{ marginLeft: "0%", marginRight: '0%' }}
         >
-          <div className=" col-lg-6 col-sm-10 col-12"
-          // col-lg-6 col-sm-10 col-12
-          // data-aos="flip-right"
-
-          >
+          <div className=" col-lg-6 col-sm-12 col-12">
             <div className="ltn__feature-item ">
               <div className="ltn__feature-info">
-                {/* <img src={downloadImg} style={{ width: "100%" }} /> */}
                 <div className='' style={{
                   margin: 0,
                   padding: 0,
@@ -130,40 +118,29 @@ const SellWithUsHead = (props) => {
                   scrollBehavior: 'smooth',
                   width: '100%',
                 }}>
-                  <video style={iOS || isAndroid ? { width: '100%' } : { width: '100%' }} className='videoTag' playsInline autoPlay loop muted>
-                    <source src={BannerService} type='video/mp4' />
+                  <video style={iOS || isAndroid ? { width: '100%',outline: 'none' ,clipPath: 'inset(10px 10px)', padding:"5px" } : { width: '100%',outline: 'none' ,clipPath: 'inset(10px 10px)', padding:"5px"}} className='videoTag' playsInline autoPlay loop muted>
+                    <source src={CrmMainVideo} type='video/mp4' />
                   </video>
-                  {/* <ReactPlayer url={BannerService} playing muted   loop  /> */}
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-sm-10 col-12">
-          {/* col-lg-6 col-sm-10 col-12 */}
+          <div className="col-lg-5 col-sm-12 col-12">
+            {/* col-lg-6 col-sm-10 col-12 */}
             <div className="ltn__feature-item">
               <div className="ltn__feature-info">
                 {/* <h3> */}
                 <h1
                   className="text_Quick"
                   style={{ color: "#053857", fontSize: "2rem" }}
-                // to="/service-details"
                 >
-                  {headingLarge}
-                  {/* <div className="curve"></div> */}
+                  {props.heading}
                 </h1>
-                {/* </h3> */}
                 <p className="" style={{ fontSize: "1rem", marginTop: '5%', color: "black" }}>
-                  {pera}
+                  {props.content}
                 </p>
               </div>
-              <div
-                style={{
-                  // display: "flex",
-                  // justifyContent: "center",
-                  // marginTop: '-20px'
-                  // marginLeft: '0.6rem'
-                }}
-                className="btn-wrapper animated"
+              <div className="btn-wrapper animated"
               >
                 <Link
                   to="#"

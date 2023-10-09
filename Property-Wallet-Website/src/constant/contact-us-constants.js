@@ -1,11 +1,16 @@
-// export const envLink = "https://developmentbackend.propertywallet.pk"
-export const envLink = "https://productionbackend.propertywallet.pk"
+// export const urlLink = process.env.REACT_APP_BASE_URL_PRODUCTION;
+export const urlLink = process.env.REACT_APP_BASE_URL_STAGING;
 
+// export const urlLink = "http://192.168.18.231:3002";
 
-export const POST_CONTACT = 'POST_CONTACT'
-export const supportForm = "/support-form"
+// const
+export const POST_CONTACT = "POST_CONTACT";
+export const MODAL_POPUP = "MODAL_POPUP";
+export const CRM_MODAL_POPUP = "CRM_MODAL_POPUP";
+export const SMARTPOINTFORM = "SMARTPOINTFORM";
 
-
-
-export const MODAL_POPUP = 'MODAL_POPUP'
-export const POPUP_FORM = '/popup-form'
+// url
+export const supportForm = "V1/support-form";
+export const popupForm = "popup-form";
+export const createCRMSupportForm = "crm-support-form/createCRMSupportForm";
+export const smartPointForm = "smart-point-form";

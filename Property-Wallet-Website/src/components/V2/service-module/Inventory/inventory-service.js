@@ -420,74 +420,7 @@ const InventoryServices = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="tab-pane fade" id="liton_tab_3_6">
-                            <div className="ltn__product-tab-content-inner">
-                                <div
-                                    className="flext-text"
-                                    style={{ display: "flex", flexDirection: "row" }}
-                                >
-                                    <div className=" imgDiv">
-                                        {/* <img className="imgIphoneScreen marginTop-30px" src={mobile} alt="img" /> */}
-                                    </div>
-                                    <div className="marginleft-350px" style={{ width: "100%", marginLeft: "" }}>
-                                        <div className="ltn__feature-item ltn__feature-item-8 bg-white  box-shadow-1 active">
-                                            <div className="ltn__feature-info">
-                                                <h3>
-                                                    <div
-                                                        className="freature-link-hover"
-                                                        style={{ color: "black" }}
-                                                        to="/service-details"
-                                                    >
-                                                        <h1>Quickest way to calculate commissions!</h1>
-                                                    </div>
-                                                </h3>
-                                                <p className="text-gray-ad" style={{ color: "", fontSize: "1rem" }}>
-                                                    Lorem Ipsum is simply dummy text of the printing and
-                                                    typesetting industry. Lorem Ipsum has been the
-                                                    industry's standard dummy text ever since the 1500s,
-                                                </p>
-                                                <div
-                                                    style={{
-                                                        display: "flex",
-                                                        // justifyContent: "center",
-                                                    }}
-                                                    className="btn-wrapper animated"
-                                                >
-                                                    {/* <Link
-                                                        to="/salestarget"
-                                                        className="theme-btn-1 btn btnLearnmore btn-effect-1"
-                                                    >
-                                                        Learn more
-                                                    </Link> */}
-                                                    <div className="btn-wrapper animated">
-                                                        <a
-                                                            // href="https://www.youtube.com/embed/HnbMYzdjuBs?autoplay=1&showinfo=0"
-                                                            className="theme-btn-Home btn btn-effect-1 "
-                                                            // data-rel="lightcase"
-                                                            style={{ marginTop: "5%" }}>
-                                                            {/* <i
-                                                                className="icon-play icon-home-play"
-                                                            // style={{ color: "#27A3A3" }}
-                                                            /> */}
-                                                            Watch tutorial<span style={{
-                                                            position: 'absolute',
-                                                            bottom: '60%',
-                                                            /* right: 20; */
-                                                            left: '50%',
-                                                            color: 'white',
-                                                            fontSize: '10px'
-                                                        }}>
-                                                            Coming soon
-                                                        </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

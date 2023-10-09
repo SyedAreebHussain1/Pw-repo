@@ -96,11 +96,9 @@ const SelectBox = (props) => {
     },
   ];
 
-  let publicUrl = process.env.PUBLIC_URL + "/";
-  let CustomClass = props.customClass ? props.customClass : "";
   return (
     <div className="ltn__faq-area faq-mobile-show" style={{display:"none"}}>
-      <div style={{ marginLeft: "0%", marginRight: "0%", marginBottom: '4%' }} className="row">
+      <div style={{ marginLeft: "0%", marginRight: "0%", marginBottom: '4%',marginTop:'20%' }} className="row">
         <div className="col-lg-12">
           <div className="ltn__faq-inner ltn__faq-inner-2">
             <div id="accordion_2">

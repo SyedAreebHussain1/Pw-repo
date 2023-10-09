@@ -1,9 +1,11 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../global-components/navbar-v2";
 import Banner from "../section-components/banner-v2";
 
 import Footer from "../global-components/footer";
 import PageHeader from "../global-components/page-header";
+import NavbarNewTwo from "../global-components/NavbarNewTwo";
+import NavbarSand from "../global-components/NavbarSand";
 
 const PrivacyPolicy = (props) => {
   const [title, setTitle] = useState("Privacy Policy | Property Wallet");
@@ -12,10 +14,9 @@ const PrivacyPolicy = (props) => {
   useEffect(() => {
     if (props.location.pathname == "/privacy") {
       setTitle("Privacy Policy | Property Wallet")
-    }else{
+    } else {
       setTitle("Privacy Policy | Property Wallet")
     }
-    // console.log(props.location.pathname)
   }, []);
 
   useEffect(() => {
@@ -388,7 +389,10 @@ const PrivacyPolicy = (props) => {
   );
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      {/* <NavbarNewTwo /> */}
+      <NavbarSand />
+
       <PageHeader headertitle="Privacy policy" content="" />
       {content}
       <Footer />

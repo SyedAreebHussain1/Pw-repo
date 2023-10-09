@@ -1,61 +1,52 @@
-import { envLink } from "../../constant/contact-us-constants"
+import axios from "axios";
+import { urlLink } from "../../constant/contact-us-constants";
 
+import { POST_CONTACT } from "../../constant/contact-us-constants";
+import { MODAL_POPUP } from "../../constant/contact-us-constants";
+import { CRM_MODAL_POPUP } from "../../constant/contact-us-constants";
 
-import { POST_CONTACT } from "../../constant/contact-us-constants"
-import { supportForm } from "../../constant/contact-us-constants"
+// end points
+import { supportForm } from "../../constant/contact-us-constants";
+import { createCRMSupportForm } from "../../constant/contact-us-constants";
+import { popupForm } from "../../constant/contact-us-constants";
 
-import { POPUP_FORM } from "../../constant/contact-us-constants"
-import { MODAL_POPUP } from "../../constant/contact-us-constants"
-
-const postContact = (data, onSuccuess, onFailur) => {
+const postContact = (data, onSuccess, onFailure) => {
   return (dispatch) =>
-    fetch(`${envLink}${supportForm}`, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch({ type: POST_CONTACT, payload: json })
-        // console.log(json, "json data")
-        if (json.message) {
-          onSuccuess(json.message)
-        }
+    axios
+      .post(`${urlLink}/${supportForm}`, data)
+      .then((res) => {
+        dispatch({ type: POST_CONTACT, payload: res });
+        onSuccess(res.data);
       })
-      .catch((error) => {
-        onFailur(error.response)
-        // onFailur()
-      })
-}
+      .catch((err) => {
+        onFailure(err);
+      });
+};
 
-const postPopup = (data, onSuccuess, onFailur) => {
+const postPopup = (data, onSuccess, onFailure) => {
   return (dispatch) =>
-    fetch(`${envLink}${POPUP_FORM}`, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch({ type: MODAL_POPUP, payload: json })
-        // console.log(json, "json data")
-        if (json.message) {
-          onSuccuess(json.message)
-        }
+    axios
+      .post(`${urlLink}/${popupForm}`, data)
+      .then((res) => {
+        dispatch({ type: MODAL_POPUP, payload: res });
+        onSuccess(res.data);
       })
-      .catch((error) => {
-        onFailur(error)
-        // onFailur()
+      .catch((err) => {
+        onFailure(err);
+      });
+};
+
+const postCrmPopum = (data, onSuccess, onFailure) => {
+  return (dispatch) =>
+    axios
+      .post(`${urlLink}/${createCRMSupportForm}`, data)
+      .then((res) => {
+        dispatch({ type: CRM_MODAL_POPUP, payload: res });
+        onSuccess(res.data);
       })
-}
+      .catch((err) => {
+        onFailure(err);
+      });
+};
 
-
-
-
-
-export { postContact, postPopup }
-//  export default postContact
+export { postContact, postPopup, postCrmPopum };

@@ -51,13 +51,14 @@ class Footer_v1 extends Component {
     let imgattr = "Footer logo";
 
     return (
-      <footer className="ltn__footer-area  " >
-        <div className="footer-top-area  section-bg-2 plr--5"
-        // data-aos="fade-up"
+      <footer className="ltn__footer-area  ">
+        <div
+          className="footer-top-area  section-bg-2 plr--5"
+          // data-aos="fade-up"
         >
-          <div className="container-fluid" >
+          <div className="container-fluid">
             <div className="row">
-              <div className="col-xl-6 col-md-6 col-sm-6 col-12">
+              <div className="col-xl-6 col-md-6 col-sm-6 col-12" style={{}}>
                 <div className="footer-widget footer-about-widget">
                   <div
                     // style={{ backgroundColor: "black" }}
@@ -67,7 +68,7 @@ class Footer_v1 extends Component {
                       // style={{ backgroundColor: "red" }}
                       className="site-logo go-top"
                     >
-                      <Link to='/'>
+                      <Link to="/">
                         <img
                           style={{ width: "50%", marginLeft: "-9%" }}
                           src={footerLogo}
@@ -86,14 +87,27 @@ class Footer_v1 extends Component {
                         <div className="footer-address-icon">
                           <i className="icon-placeholder" />
                         </div>
-                        <div className="footer-address-info">
-                          <p onClick={() => {
-                            window.open(
-                              "https://www.google.com/maps/place/Miran+Mohammed+Shah+Rd,+Muhammad+Ali+Chs+(Machs),+Karachi,+Karachi+City,+Sindh/@24.8756046,67.0897168,21z/data=!4m6!3m5!1s0x3eb33eb38ab84d6f:0x23ff5d5fb3c0d7dd!8m2!3d24.8785713!4d67.0883437!16s%2Fg%2F12hs52yyg"
-                            );
-                          }}
+                        <div
+                          className="footer-address-info"
+                          style={{ cursor: "pointer" }}
+                        >
+                          <p
+                          // onClick={() => {
+                          //   window.open(
+                          //     "https://www.google.com/maps/place/Miran+Mohammed+Shah+Rd,+Muhammad+Ali+Chs+(Machs),+Karachi,+Karachi+City,+Sindh/@24.8756046,67.0897168,21z/data=!4m6!3m5!1s0x3eb33eb38ab84d6f:0x23ff5d5fb3c0d7dd!8m2!3d24.8785713!4d67.0883437!16s%2Fg%2F12hs52yyg"
+                          //   );
+                          // }}
                           >
-                            B-6 (C), Miran Mohammad Shah Road, M.A.C.H.S, Karachi
+                            <a
+                              target="_blank"
+                              href="https://www.google.com/maps/place/Miran+Mohammed+Shah+Rd,+Muhammad+Ali+Chs+(Machs),+Karachi,+Karachi+City,+Sindh/@24.8756046,67.0897168,21z/data=!4m6!3m5!1s0x3eb33eb38ab84d6f:0x23ff5d5fb3c0d7dd!8m2!3d24.8785713!4d67.0883437!16s%2Fg%2F12hs52yyg"
+                            >
+                              {" "}
+                              B-6 (C), Miran Mohammad Shah Road, M.A.C.H.S,
+                              Karachi
+                            </a>
+
+                            {/* B-6 (C), Miran Mohammad Shah Road, M.A.C.H.S, Karachi */}
                           </p>
                         </div>
                       </li>
@@ -103,7 +117,7 @@ class Footer_v1 extends Component {
                         </div>
                         <div className="footer-address-info">
                           <p>
-                            <a href="tel:03333739291">03333739291</a>
+                            <a href="tel:03311110379">0331-111-0379</a>
                           </p>
                         </div>
                       </li>
@@ -113,7 +127,7 @@ class Footer_v1 extends Component {
                         </div>
                         <div className="footer-address-info">
                           <p>
-                            <a href="mailto:example@example.com">
+                            <a href="mailto:info@propertywallet.pk">
                               info@propertywallet.pk
                             </a>
                           </p>
@@ -130,10 +144,7 @@ class Footer_v1 extends Component {
                     }}
                   >
                     <div>
-                      <a
-                        href="http://bit.ly/400UobD"
-                        target="_blank"
-                      >
+                      <a href="http://bit.ly/400UobD" target="_blank">
                         <img
                           src={appleImg}
                           alt=""
@@ -142,10 +153,7 @@ class Footer_v1 extends Component {
                       </a>
                     </div>
                     <div>
-                      <a
-                        href="http://bit.ly/40cIpYz"
-                        target="_blank"
-                      >
+                      <a href="http://bit.ly/40cIpYz" target="_blank">
                         <img
                           src={googleImg}
                           alt=""
@@ -163,49 +171,128 @@ class Footer_v1 extends Component {
                   </div> */}
                 </div>
               </div>
-              <div className="col-xl-3 col-md-6 col-sm-6 col-12">
-                <div className="footer-widget footer-menu-widget clearfix">
+              <div className="col-xl-2 col-md-6 col-sm-6 col-12" style={{}}>
+                {/* <div className="footer-widget footer-menu-widget clearfix">
                   <h4 className="footer-title">Services</h4>
                   <div className="footer-menu go-top">
                     <ul>
                       <li>
-                        <Link to="/inventory-management">Inventory Management</Link>
+                        <Link className="link-color" to="/inventory-management">
+                          Inventory Management
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/staff-management">Staff Management</Link>
+                        <Link className="link-color" to="/staff-management">
+                          Staff Management
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/commission-management">Commission Management</Link>
+                        <Link
+                          className="link-color"
+                          to="/commission-management"
+                        >
+                          Commission Management
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/report-management">Report Management</Link>
+                        <Link className="link-color" to="/report-management">
+                          Report Management
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/digital-tools">Digital Tools</Link>
+                        <Link className="link-color" to="/digital-tools">
+                          Digital Tools
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/sales-target">Target Sales Management</Link>
+                        <Link className="link-color" to="/sales-target">
+                          Target Sales Management
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div> */}
+                <div className="footer-widget footer-menu-widget clearfix">
+                  <h4 className="footer-title">Our Products</h4>
+                  <div className="footer-menu go-top">
+                    <ul>
+                      <li>
+                        <Link className="link-color" to="/crm">
+                          Property Wallet Crm
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="link-color" to="/verification-app">
+                          Customer Verification
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="link-color" to="/smart-point">
+                          Smart Point
+                        </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div className="col-xl-3 col-md-6 col-sm-6 col-12">
+              <div className="col-xl-2 col-md-6 col-sm-6 col-12" style={{}}>
                 <div className="footer-widget footer-menu-widget clearfix">
                   <h4 className="footer-title">About</h4>
                   <div className="footer-menu go-top">
                     <ul>
                       <li>
-                        <Link to="/about">About us</Link>
+                        <Link className="link-color" to="/about">
+                          About us
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/faq">FAQS</Link>
+                        <Link className="link-color" to="/faq">
+                          FAQS
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/privacy">Privacy policy</Link>
+                        <Link className="link-color" to="/privacy">
+                          Privacy policy
+                        </Link>
                       </li>
                       <li>
-                        <Link to="/terms">Term of services</Link>
+                        <Link className="link-color" to="/terms">
+                          Term of services
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="link-color" to="/how-to-use">
+                          How to use
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="link-color" to="/contact">
+                          Contact
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-2 col-md-6 col-sm-6 col-12" style={{}}>
+                <div className="footer-widget footer-menu-widget clearfix">
+                  <h4 className="footer-title">Useful links</h4>
+                  <div className="footer-menu go-top">
+                    <ul>
+                      <li>
+                        <Link className="link-color" to="/pwform">
+                          Pw Form
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="link-color" to="/invoice">
+                          Invoice Checker
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="link-color" to="/login">
+                          Partner Login
+                        </Link>
                       </li>
                     </ul>
                   </div>

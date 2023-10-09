@@ -5,14 +5,14 @@
 /.pnp
 .pnp.js
 
-*.env
+
 
 # testing
 /coverage
 
 # production
 /build
-
+package-lock
 # misc
 .DS_Store
 .env.local
